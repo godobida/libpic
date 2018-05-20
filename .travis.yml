@@ -1,0 +1,17 @@
+language: c
+sudo: true
+
+before_install:
+- sudo apt-get update
+- sudo apt-get -y install wget
+- sudo apt-get -y install unzip
+
+env:
+- ARCH=--intel
+- ARCH=--mips
+- ARCH=--powerpc
+- ARCH=--arm
+- ARCH=--debug
+
+script:
+- make all
